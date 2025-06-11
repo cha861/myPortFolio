@@ -4,41 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script>window.addEventListener("scroll",()=>{
-        document.querySelectorAll("section").forEach(sec=>{
-            const rect=sec.getBoundingClientRect();
-            if(rect.top<window.innerHeight-100){
-                sec.style.opacity=1;
-                sec.style.transform="translateY(0)";
-            }
-        });
-    });
-
-    //scroll animation
-    const sections= document.querySelectorAll("section");
-
-    const revealOnScroll=()=>{
-        sections.forEach((sec,index)=>{
-            const rect=sec.getBoundingClientRect();
-            if(rect.top< window.innerHeight-100){
-                sec.style.opacity=1;
-                sec.style.transform="translateY(0)";
-                sec.style.transitionDelay=`${index*0.2}s`;//staggered effect
-            }
-        });
-    };
-
-    window.addEventListener("scroll", revealOnScroll);
-    //initial state
-    document.querySelectorAll("section").forEach(sec=>{
-        sec.style.opacity=0;
-        sec.style.transform-"translateY(50px)"
-        sec.style.transition="all 0.6s ease-out";
-    });
-
-    </script>
-</head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 <body>
     <!--Navigation-->
     <nav>
