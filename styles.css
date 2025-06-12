@@ -16,7 +16,9 @@ nav{
     align-items: center;
     padding: 1em 2em;
 }
-
+h2{
+    color:rgb(0, 0, 0);
+}
 nav h1{
     color:#00ffd5;
 }
