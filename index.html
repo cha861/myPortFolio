@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
 
+
     <style>
     body{
         margin:0;
         font-family:'Segoe UI', sans-serif;
         background-color: #121212;
         color:#e0e0e0;
+    }
+        body{
+        margin:0;
+        padding:0;
+        font-family:'Inter', sans-serif;
+        background-color: #121212;
+        color:#e0e0e0;
+        line-height: 1.6;
+    }
+    section{
+        padding:60px 20px;
     }
 
     nav{
@@ -120,6 +132,13 @@
         font-weight:7px;
         color:black;
     }
+
+
+    @media(min-width:768px){
+    section{
+        padding:80px 100px;
+    }
+    }
     @keyframes pulse-glow{
         0%,100%{
             box-shadow: 0 0 15px rgba(210, 209, 204, 0.6);;
@@ -221,6 +240,8 @@
     <!--contact-->
     <section id="contact">
         <h2 style="color:black;">Contact Me</h2>
+
+        <h2 style="color:rgb(0, 0, 0);">Let's connect</h2>
         <form >
             <input type="text" placeholder="Your Name" required class="name"><br>
             <input type="email" placeholder="Your Mail" required class="email"><br>
@@ -228,5 +249,8 @@
             <button type="submit" class="send">Send</button>
         </form>
     </section>
+    <footer style="text-align:center; padding:1em; background:#1f1f1f;">
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+
 </body>
 </html>
