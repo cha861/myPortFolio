@@ -10,7 +10,7 @@ Currently focused on front-end development, and actively evolving this project a
 
 ## 📂 Sections Included
 - *Hero Section*: Introduction with name, role, and CTA buttons
-- *About Me*: Brief overview of my background, interests, and goals
+- *About*: Brief overview of my background, interests, and goals
 - *Projects*: List of selected works with descriptions
 - *Skills*: Visual display of tech tools I’m comfortable with
 - *Contact*: Contact form 
