@@ -5,7 +5,7 @@ Currently focused on front-end development, and actively evolving this project a
 ## 🧰 Tech Stack
 - HTML5
 - CSS3 (Custom Styling)
-- JavaScript (Vanilla JS for interactivity)
+- JavaScript 
 - Responsive Design (Mobile-Friendly)
 
 ## 📂 Sections Included
