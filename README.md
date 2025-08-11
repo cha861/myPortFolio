@@ -24,7 +24,7 @@ Currently focused on front-end development, and actively evolving this project a
 
 ## 🚧 Current Status
 🟡 *In Progress* — last major update: 1 month ago  
-Actively learning and will push major updates soon.
+Actively learning and will push major updates soon!!
 
 ## 📫 Contact Me
 - Email: [charitha57807@gmail.com]
