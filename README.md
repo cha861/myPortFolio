@@ -1,5 +1,4 @@
 💼 Personal Portfolio Website
-
 This is my personal developer portfolio, built to showcase my skills, projects, and growth as a full stack web developer.  
 Currently focused on front-end development, and actively evolving this project as I learn more.
 ## 🧰 Tech Stack
