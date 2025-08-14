@@ -28,7 +28,7 @@ Actively learning and will push major updates soon!!
 ## 📫 Contact Me
 - Email: [charitha57807@gmail.com]
 - LinkedIn: [https://www.linkedin.com/in/charitha-c-4661b7329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
-- GitHub: [[github.com/yourusername](https://github.com/yourusername](https://github.com/cha861))
+- GitHub: [[github.com/cha861](https://github.com/cha861))
 
 ---
 
