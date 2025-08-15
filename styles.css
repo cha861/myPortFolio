@@ -4,8 +4,16 @@ body{
     font-family:'Inter', sans-serif;
     background-color: #121212;
     color:#e0e0e0;
-    line-height: 1.6;
+    line-height: 2.0;
+
+    display:flex;
+    flex-direction: column;
+    height:50vh;
+    background-size:30px 30px;
+    background-image:linear-gradient(to right, #4b4a4b 1px, transparent 1px),
+    linear-gradient(to bottom, #4b4a4b 1px, transparent 1px);
 }
+
 section{
     padding:60px 20px;
 }
@@ -17,7 +25,7 @@ nav{
     padding: 1em 2em;
 }
 h2{
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
 }
 nav h1{
     color:#00ffd5;
@@ -44,14 +52,15 @@ section{
 }
 
 .profile-img{
-    max-width: 150px;
-    border-radius: 50%;
+    max-width: 700px;
+    border-radius: 0%;
     display: block;
     margin:0 auto 1em;
 }
 
 .about-text{
     text-align: center;
+    color:#e0e0e0
 }
 
 .skills-container,.experience-container{
@@ -84,8 +93,8 @@ button{
     border-radius:4px ;
 }
 .profile-img{
-    border-radius: 50%;
-    width:150px;
+    border-radius: 1%;
+    width:200px;
     box-shadow: 0 0 15px rgba(0,255,213,0.6);
     animation:pulse-glow 4s infinite ease-in-out;
 }
@@ -117,6 +126,11 @@ button{
 .p1,.p2{
     font-weight:7px;
     color:black;
+}
+footer{
+    text-align:center;
+    padding:1em;
+    background:#1f1f1f;
 }
 @media(min-width:768px){
 section{
