@@ -20,9 +20,11 @@ Currently focused on front-end development, and actively evolving this project a
 - Deploy and connect custom domain
 - Add dark mode toggle
 - Optimize for SEO and performance
+- rectify major bugs and issues in the code(working on it)
 
 ## 🚧 Current Status
 🟡 *In Progress* — last major update: 1 month ago  
+
 Actively learning and will push major updates soon!!
 
 ## 📫 Contact Me
