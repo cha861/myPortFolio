@@ -1,78 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+
+  <style>
+    /* master branch CSS (your dark theme, nav, sections, animations) */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: #e0e0e0;
+      line-height: 1.6;
+      background-color: #0f172a;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    /* ... keep rest of your master CSS here ... */
+  </style>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll("section").forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.style.opacity = 1;
+          sec.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+      sections.forEach((sec, index) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.style.opacity = 1;
+          sec.style.transform = "translateY(0)";
+          sec.style.transitionDelay = `${index * 0.2}s`;
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+
+    document.querySelectorAll("section").forEach(sec => {
+      sec.style.opacity = 0;
+      sec.style.transform = "translateY(50px)";
+      sec.style.transition = "all 0.6s ease-out";
+    });
+  </script>
+</head>
 <body>
-    <!--Navigation-->
-    <nav>
-        <h1>My Portfolio</h1>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <!--image&about-->
-    <section id="about">
-        <img src="myprofile.jpg" alt="My Profile" class="profile-img">
-        <div class="about-text">
-            <h2>Hi, I'm Charitha</h2>
-            <p>I'm a computer science undergraduate passionate about building meaningful software solutions.
-                <br>I'm currently pursuing my B.Tech in computer Science and Engineering at JNTUA college of Engineering kalikiri, where I'm
-                developing a strong foundation in databases,and web technologies. I enjoy exploring both front-end and
-                back-end development and continuously strive to improve my skills through projects and personal learning.
-                <br> I'm particularly interested in full-stack development and love creating clean, functional.and user-friendly
-                websites. When I'm not coding,i enjoy reading digital books and learning about new tech trends.
-            </p>
-        </div>
-    </section>
-    <!--skills-->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-                <div>Java</div>
-                <div>Python</div>
-                <div>HTML</div>
-                <div>CSS</div>
-                <div>JavaScript</div>
-        </div>
-    </section>
-    <!--experience-->
-    <section id="experience">
+  <!--Navigation-->
+  <nav>
+    <h1>My Portfolio</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!--About-->
+  <section id="about">
+    <img src="profile.jpg" alt="My Profile" class="profile-img">
+    <div class="about-text">
+      <h2>Hi, I'm Charitha</h2>
+      <p>I'm a computer science undergraduate passionate about building meaningful software solutions.
+        <br>I'm currently pursuing my B.Tech in computer Science and Engineering at JNTUA college of Engineering Kalikiri...
+      </p>
+    </div>
+  </section>
+
+  <!--Skills-->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div>Java</div>
+      <div>Python</div>
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+    </div>
+  </section>
+
+  <!--Experience-->
+  <section id="experience">
     <h2>Experience</h2>
     <div class="experience-container">
-        <p class="p1">Personal Portfolio website<br>
-            HTML, CSS, JavaScript<br>
-            Jan 2025-present
-            <div>Designed and developed a personal portfolio to showcase projects and skills.</div>
-            <div>implemented a responsive dark-themed layout with smooth animations using javascript.</div>
-            <div>Structured sections for about,Skills,Projects,and Contact to improve personal branding.</div>
-        </p>
-        <p class="p2">
-            Responsive web design Projects<br>
-            HTML CSS JavaScript<br>
-            Oct 2024-Dec 2024
-                    <div>Built multiple responsive web pages and mini projects as part of self learning.</div>
-                    <div>Focused on semantic HTML and custom CSS styling with layout techniques like flexbox and grid.</div>
-                    <div>Added interactive UI elements using JavaScript</div>
-    </p>
-    </section>
-    <!--contact-->
-    <section id="contact">
-        <h2 >Let's connect</h2>
-        <form >
-            <input type="text" placeholder="Your Name" required class="name"><br>
-            <input type="email" placeholder="Your Mail" required class="email"><br>
-            <textarea placeholder="Your Message" required class="message"></textarea><br>
-            <button type="submit" class="send">Send</button>
-        </form>
-    </section>
-    <footer >
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+      <p class="p1">Personal Portfolio website<br>
+        HTML, CSS, JavaScript<br>
+        Jan 2025-present
+        <div>Designed and developed a personal portfolio to showcase projects and skills.</div>
+        <div>Implemented a responsive dark-themed layout with smooth animations using JavaScript.</div>
+      </p>
+      <p class="p2">
+        Responsive web design Projects<br>
+        HTML CSS JavaScript<br>
+        Oct 2024-Dec 2024
+        <div>Built multiple responsive web pages and mini projects as part of self learning.</div>
+      </p>
+    </div>
+  </section>
+
+  <!--Contact-->
+  <section id="contact">
+    <h2 style="color:black;">Let's connect</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required class="name"><br>
+      <input type="email" placeholder="Your Mail" required class="email"><br>
+      <textarea placeholder="Your Message" required class="message"></textarea><br>
+      <button type="submit" class="send">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer>
 </body>
 </html>
