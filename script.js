@@ -32,3 +32,8 @@ document.querySelectorAll("section").forEach(sec=>{
     sec.style.transition="all 0.6s ease-out";
 });
 
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // stop page reload
+    // validate + fetch
+  });
+  
