@@ -1,254 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
 
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
 
-    <style>
-    body{
-        margin:0;
-        padding:0;
-        font-family:'Inter', sans-serif;
-        color:#e0e0e0;
-        line-height: 1.6;
-        background-color: #0f172a; /* dark navy */
-        background-image:
+  <style>
+    /* master branch CSS (your dark theme, nav, sections, animations) */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: #e0e0e0;
+      line-height: 1.6;
+      background-color: #0f172a;
+      background-image:
         linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
         linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
-        background-size: 40px 40px; /* size of each grid square */
+      background-size: 40px 40px;
     }
+    /* ... keep rest of your master CSS here ... */
+  </style>
 
-    section{
-        padding:60px 20px;
-    }
-
-    nav{
-        background: #1f1f1f;
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1em 2em;
-    }
-
-    nav h1{
-        color:#00ffd5;
-    }
-    nav ul{
-        list-style:none;
-        display:flex;
-        gap:1.5em;
-    }
-
-    nav a{
-        color:#e0e0e0;
-        text-decoration: none;
-        transition:color 0.3s ;
-    }
-
-    nav a:hover{
-        color:#00ffd5
-    }
-
-    section{
-        padding:4em 2em;
-        border-bottom:1px solid #333;
-    }
-
-    .profile-img{
-        max-width: 150px;
-        border-radius: 50%;
-        display: block;
-        margin:0 auto 1em;
-    }
-
-    .about-text{
-        text-align: center;
-    }
-
-    .skills-container,.experience-container{
-    display:flex;
-    flex-direction: column;
-    gap: 1em;
-    max-width: 400px;
-    margin: auto;
-    }
-
-    input,textarea{
-        padding:0.75em;
-        background: #1e1e1e;
-        border:1px solid #444;
-        color:#fff;
-        border-radius: 4px;
-    }
-    #skills{
-        background-color: #444;
-    }
-    #experience{
-        background-color:gray ;
-    }
-    button{
-        background: #00ffd5;
-        color:#000;
-        padding:0.75em;
-        border:none;
-        cursor:pointer;
-        border-radius:4px ;
-    }
-    .profile-img{
-        border-radius: 50%;
-        width:150px;
-        box-shadow: 0 0 15px rgba(0,255,213,0.6);
-        animation:pulse-glow 4s infinite ease-in-out;
-    }
-    .name{
-        margin-bottom: 5px;
-        margin-top:5px; ;
-    }
-    .email{
-        margin-bottom: 5px;
-        margin-top:5px; ;
-    }
-    .message{
-        margin-bottom: 5px;
-        margin-top:5px; ;
-    }
-    #contact{
-        background:rgb(177, 179, 166);
-    }
-    .send{
-        background-color: white;
-        color:black;
-        width:100px;
-        font-weight:600;
-    }
-    .send:hover{
-        background-color: rgb(14, 13, 13);
-        color:white;
-    }
-    .p1,.p2{
-        font-weight:7px;
-        color:black;
-    }
-
-
-    @media(min-width:768px){
-    section{
-        padding:80px 100px;
-    }
-    }
-    @keyframes pulse-glow{
-        0%,100%{
-            box-shadow: 0 0 15px rgba(210, 209, 204, 0.6);;
+  <script>
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll("section").forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.style.opacity = 1;
+          sec.style.transform = "translateY(0)";
         }
-        50%{
-            box-shadow: 0 0 25px rgb(169, 145, 192);
-        }
-    }</style>
-    <script>window.addEventListener("scroll",()=>{
-        document.querySelectorAll("section").forEach(sec=>{
-            const rect=sec.getBoundingClientRect();
-            if(rect.top<window.innerHeight-100){
-                sec.style.opacity=1;
-                sec.style.transform="translateY(0)";
-            }
-        });
+      });
     });
 
-    //scroll animation
-    const sections= document.querySelectorAll("section");
+    const sections = document.querySelectorAll("section");
 
-    const revealOnScroll=()=>{
-        sections.forEach((sec,index)=>{
-            const rect=sec.getBoundingClientRect();
-            if(rect.top< window.innerHeight-100){
-                sec.style.opacity=1;
-                sec.style.transform="translateY(0)";
-                sec.style.transitionDelay=`${index*0.2}s`;//staggered effect
-            }
-        });
+    const revealOnScroll = () => {
+      sections.forEach((sec, index) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.style.opacity = 1;
+          sec.style.transform = "translateY(0)";
+          sec.style.transitionDelay = `${index * 0.2}s`;
+        }
+      });
     };
 
     window.addEventListener("scroll", revealOnScroll);
-    //initial state
-    document.querySelectorAll("section").forEach(sec=>{
-        sec.style.opacity=0;
-        sec.style.transform-"translateY(50px)"
-        sec.style.transition="all 0.6s ease-out";
-    });
 
-    </script>
+    document.querySelectorAll("section").forEach(sec => {
+      sec.style.opacity = 0;
+      sec.style.transform = "translateY(50px)";
+      sec.style.transition = "all 0.6s ease-out";
+    });
+  </script>
 </head>
 <body>
-    <!--Navigation-->
-    <nav>
-        <h1>My Portfolio</h1>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <!--image&about-->
-    <section id="about">
-        <img src="profile.jpg" alt="My Profile" class="profile-img">
-        <div class="about-text">
-            <h2>Hi, I'm charitha</h2>
-            <p>I'm a computer science undergraduate passionate about building meaningful software solutions.
-                <br>I'm currently pursuing my B.Tech in computer Science and Engineering at JNTUA college of Engineering kalikiri, where I'm
-                developing a strong foundation in databases,and web technologies. I enjoy exploring both front-end and
-                back-end development and continuously strive to improve my skills through projects and personal learning.
-                <br> I'm particularly interested in full-stack development and love creating clean, functional.and user-friendly
-                websites. When I'm not coding,i enjoy reading digital books and learning about new tech trends.
-            </p>
-        </div>
-    </section>
-    <!--skills-->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-                <div>Java</div>
-                <div>Python</div>
-                <div>HTML</div>
-                <div>CSS</div>
-                <div>JavaScript</div>
-        </div>
-    </section>
-    <!--experience-->
-    <section id="experience">
+  <!--Navigation-->
+  <nav>
+    <h1>My Portfolio</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!--About-->
+  <section id="about">
+    <img src="profile.jpg" alt="My Profile" class="profile-img">
+    <div class="about-text">
+      <h2>Hi, I'm Charitha</h2>
+      <p>I'm a computer science undergraduate passionate about building meaningful software solutions.
+        <br>I'm currently pursuing my B.Tech in computer Science and Engineering at JNTUA college of Engineering Kalikiri...
+      </p>
+    </div>
+  </section>
+
+  <!--Skills-->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div>Java</div>
+      <div>Python</div>
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+    </div>
+  </section>
+
+  <!--Experience-->
+  <section id="experience">
     <h2>Experience</h2>
     <div class="experience-container">
-        <p class="p1">Personal Portfolio website<br>
-            HTML, CSS, JavaScript<br>
-            Jan 2025-present
-            <div>Designed and developed a personal portfolio to showcase projects and skills.</div>
-            <div>implemented a responsive dark-themed layout with smooth animations using javascript.</div>
-            <div>Structured sections for about,Skills,Projects,and Contact to improve personal branding.</div>
-        </p>
-        <p class="p2">
-            Responsive web design Projects<br>
-            HTML CSS JavaScript<br>
-            Oct 2024-Dec 2024
-                    <div>Built multiple responsive web pages and mini projects as part of self learning.</div>
-                    <div>Focused on semantic HTML and custom CSS styling with layout techniques like flexbox and grid.</div>
-                    <div>Added interactive UI elements using JavaScript</div>
-    </p>
-    </section>
-    <!--contact-->
-    <section id="contact">
-        <h2 style="color:black;">Contact Me</h2>
+      <p class="p1">Personal Portfolio website<br>
+        HTML, CSS, JavaScript<br>
+        Jan 2025-present
+        <div>Designed and developed a personal portfolio to showcase projects and skills.</div>
+        <div>Implemented a responsive dark-themed layout with smooth animations using JavaScript.</div>
+      </p>
+      <p class="p2">
+        Responsive web design Projects<br>
+        HTML CSS JavaScript<br>
+        Oct 2024-Dec 2024
+        <div>Built multiple responsive web pages and mini projects as part of self learning.</div>
+      </p>
+    </div>
+  </section>
 
-        <h2 style="color:rgb(0, 0, 0);">Let's connect</h2>
-        <form >
-            <input type="text" placeholder="Your Name" required class="name"><br>
-            <input type="email" placeholder="Your Mail" required class="email"><br>
-            <textarea placeholder="Your Message" required class="message"></textarea><br>
-            <button type="submit" class="send">Send</button>
-        </form>
-    </section>
-    <footer style="text-align:center; padding:1em; background:#1f1f1f;">
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  <!--Contact-->
+  <section id="contact">
+    <h2 style="color:black;">Let's connect</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required class="name"><br>
+      <input type="email" placeholder="Your Mail" required class="email"><br>
+      <textarea placeholder="Your Message" required class="message"></textarea><br>
+      <button type="submit" class="send">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer>
 </body>
 </html>

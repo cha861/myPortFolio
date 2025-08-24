@@ -1,0 +1,147 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:'Inter', sans-serif;
+    background-color: #121212;
+    color:#e0e0e0;
+    line-height: 2.0;
+
+    display:flex;
+    flex-direction: column;
+    height:50vh;
+    background-size:30px 30px;
+    background-image:linear-gradient(to right, #4b4a4b 1px, transparent 1px),
+    linear-gradient(to bottom, #4b4a4b 1px, transparent 1px);
+}
+
+section{
+    padding:60px 20px;
+}
+nav{
+    background: #1f1f1f;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+}
+h2{
+    color:rgb(255, 255, 255);
+}
+nav h1{
+    color:#00ffd5;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:1.5em;
+}
+
+nav a{
+    color:#e0e0e0;
+    text-decoration: none;
+    transition:color 0.3s ;
+}
+
+nav a:hover{
+    color:#00ffd5
+}
+
+section{
+    padding:4em 2em;
+    border-bottom:1px solid #333;
+}
+
+.profile-img{
+    max-width: 700px;
+    border-radius: 0%;
+    display: block;
+    margin:0 auto 1em;
+}
+
+.about-text{
+    text-align: center;
+    color:#e0e0e0
+}
+
+.skills-container,.experience-container{
+display:flex;
+flex-direction: column;
+gap: 1em;
+max-width: 400px;
+margin: auto;
+}
+
+input,textarea{
+    padding:0.75em;
+    background: #1e1e1e;
+    border:1px solid #444;
+    color:#fff;
+    border-radius: 4px;
+}
+#skills{
+    background-color: #444;
+}
+#experience{
+    background-color:gray ;
+}
+button{
+    background: #00ffd5;
+    color:#000;
+    padding:0.75em;
+    border:none;
+    cursor:pointer;
+    border-radius:4px ;
+}
+.profile-img{
+    border-radius: 1%;
+    width:200px;
+    box-shadow: 0 0 15px rgba(0,255,213,0.6);
+    animation:pulse-glow 4s infinite ease-in-out;
+}
+.name{
+    margin-bottom: 5px;
+    margin-top:5px; ;
+}
+.email{
+    margin-bottom: 5px;
+    margin-top:5px; ;
+}
+.message{
+    margin-bottom: 5px;
+    margin-top:5px; ;
+}
+#contact{
+    background:rgb(177, 179, 166);
+}
+.send{
+    background-color: white;
+    color:black;
+    width:100px;
+    font-weight:600;
+}
+.send:hover{
+    background-color: rgb(14, 13, 13);
+    color:white;
+}
+.p1,.p2{
+    font-weight:7px;
+    color:black;
+}
+footer{
+    text-align:center;
+    padding:1em;
+    background:#1f1f1f;
+}
+@media(min-width:768px){
+section{
+    padding:80px 100px;
+}
+}
+@keyframes pulse-glow{
+    0%,100%{
+        box-shadow: 0 0 15px rgba(210, 209, 204, 0.6);;
+    }
+    50%{
+        box-shadow: 0 0 25px rgb(169, 145, 192);
+    }
+}
