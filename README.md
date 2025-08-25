@@ -34,7 +34,4 @@ Actively learning and will push major updates soon!!
 
 - GitHub: [GitHub](https://github.com/cha861)
 
-
----
-
 > ⚠ This project is a part of my journey toward becoming a Full Stack Developer. Feedback and contributions are welcome!
