@@ -1,52 +1,99 @@
-// Select all sections
-const sections = document.querySelectorAll("section");
+// Wait for DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // 1. Scroll Animation (Intersection Observer is more efficient than scroll event)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
 
-// Initial hidden state
-sections.forEach((sec) => {
-  sec.style.opacity = 0;
-  sec.style.transform = "translateY(50px)";
-  sec.style.transition = "all 0.6s ease-out";
-});
-
-// Reveal on scroll function (one-time)
-const revealOnScroll = () => {
-  sections.forEach((sec, index) => {
-    if (sec.dataset.revealed) return; // skip if already revealed
-
-    const rect = sec.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-      sec.style.transitionDelay = `${index * 0.2}s`; // staggered effect
-      sec.dataset.revealed = "true"; // mark as revealed
-    }
+  document.querySelectorAll('section').forEach(sec => {
+    observer.observe(sec);
   });
-};
 
-// Listen for scroll + trigger on load
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+  // 2. Navigation Active State on Scroll
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".sidebar nav a");
 
-// Handle contact form submission
-const form = document.querySelector("form");
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop page reload
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= sectionTop - 150) {
+        current = section.getAttribute("id");
+      }
+    });
 
-    // Collect data
-    const name = form.querySelector(".name").value.trim();
-    const email = form.querySelector(".email").value.trim();
-    const message = form.querySelector(".message").value.trim();
-
-    if (!name || !email || !message) {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    // Example: handle form submission (can integrate with backend or email service)
-    console.log("Form submitted:", { name, email, message });
-    alert("Message sent successfully!");
-
-    form.reset();
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
   });
+
+  // 3. Form Handling
+  const form = document.querySelector("#contact-form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // Add visual feedback button change
+      const btn = form.querySelector("button");
+      const originalText = btn.innerText;
+      
+      btn.innerText = "Sent Successfully!";
+      btn.style.backgroundColor = "#4ade80"; // Green
+      
+      setTimeout(() => {
+        form.reset();
+        btn.innerText = originalText;
+        btn.style.backgroundColor = ""; // Reset
+      }, 3000);
+    });
+  }
+  const roles = ["Full Stack Developer", "UI/UX Designer", "Python Enthusiast"];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typeSpeed = 100;
+const deleteSpeed = 50;
+const delayBetweenRoles = 2000;
+
+function typeWriter() {
+  const currentRole = roles[roleIndex];
+  const typeElement = document.querySelector(".typewriter");
+  
+  if (!typeElement) return; // Guard clause
+
+  if (isDeleting) {
+    // Deleting text
+    typeElement.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    // Typing text
+    typeElement.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  // Speed control
+  let typeDelay = isDeleting ? deleteSpeed : typeSpeed;
+
+  if (!isDeleting && charIndex === currentRole.length) {
+    // Finished typing word, pause before deleting
+    typeDelay = delayBetweenRoles;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    // Finished deleting, move to next word
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+  }
+
+  setTimeout(typeWriter, typeDelay);
 }
+
+// Start the effect when page loads
+document.addEventListener("DOMContentLoaded", typeWriter);
+});
