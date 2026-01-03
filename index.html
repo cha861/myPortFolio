@@ -1,130 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Charitha | Digital Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <script
+      defer
+      src="script.js"
+    ></script>
+  </head>
+  <body>
+    <div class="menu-toggle">☰</div>
 
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+    <aside class="sidebar">
+      <div class="profile-container">
+        <img
+          src="profile.jpg"
+          alt="Charitha"
+          class="profile-img"
+        />
+      </div>
+      <h1>Charitha</h1>
+      <p class="role">Computer Science Student</p>
 
-  <style>
-    /* master branch CSS (your dark theme, nav, sections, animations) */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      color: #e0e0e0;
-      line-height: 1.6;
-      background-color: #0f172a;
-      background-image:
-        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-    /* ... keep rest of your master CSS here ... */
-  </style>
+      <nav>
+        <a
+          href="#about"
+          class="active"
+        >
+          About
+        </a>
+        
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <script>
-    window.addEventListener("scroll", () => {
-      document.querySelectorAll("section").forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.style.opacity = 1;
-          sec.style.transform = "translateY(0)";
-        }
-      });
-    });
+      <div class="contact-mini">
+        <p>📍 Kalikiri, India</p>
+        <a
+          href="mailto:charitha57807@gmail.com"
+          class="btn-small"
+        >
+          Email Me
+        </a>
+      </div>
+    </aside>
 
-    const sections = document.querySelectorAll("section");
+    <main>
+      <section
+        id="about"
+        class="fade-in"
+      >
+        <h2>Profile</h2>
+        <p class="bio">
+          I am a <span class="typewriter">Full Stack Developer</span>
+          
+          in training. Currently pursuing B.Tech in CSE at JNTUA College of
+          Engineering. Passionate about building meaningful software solutions
+          and mastering the modern web.
+        </p>
+      </section>
 
-    const revealOnScroll = () => {
-      sections.forEach((sec, index) => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.style.opacity = 1;
-          sec.style.transform = "translateY(0)";
-          sec.style.transitionDelay = `${index * 0.2}s`;
-        }
-      });
-    };
+      <section
+        id="skills"
+        class="fade-in"
+      >
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">HTML5 & CSS3</span>
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">Responsive Design</span>
+        </div>
+      </section>
 
-    window.addEventListener("scroll", revealOnScroll);
+      <section
+        id="experience"
+        class="fade-in"
+      >
+        <h2>Experience & Projects</h2>
 
-    document.querySelectorAll("section").forEach(sec => {
-      sec.style.opacity = 0;
-      sec.style.transform = "translateY(50px)";
-      sec.style.transition = "all 0.6s ease-out";
-    });
-  </script>
-</head>
-<body>
-  <!--Navigation-->
-  <nav>
-    <h1>My Portfolio</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+        <div class="resume-item">
+          <div class="date">Jan 2025 - Present</div>
+          <div class="content">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              Designed and developed a personal portfolio to showcase projects.
+              Implemented a responsive dark-themed layout with smooth
+              animations.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+          </div>
+        </div>
 
-  <!--About-->
-  <section id="about">
-    <img src="profile.jpg" alt="My Profile" class="profile-img">
-    <div class="about-text">
-      <h2>Hi, I'm Charitha</h2>
-      <p>I'm a computer science undergraduate passionate about building meaningful software solutions.
-        <br>I'm currently pursuing my B.Tech in computer Science and Engineering at JNTUA college of Engineering Kalikiri...
-      </p>
-    </div>
-  </section>
+        <div class="resume-item">
+          <div class="date">Oct 2024 - Dec 2024</div>
+          <div class="content">
+            <h3>Responsive Web Design Projects</h3>
+            <p>
+              Built multiple responsive web pages and mini-projects as part of
+              self-learning, focusing on mobile-first architecture.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!--Skills-->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div>Java</div>
-      <div>Python</div>
-      <div>HTML</div>
-      <div>CSS</div>
-      <div>JavaScript</div>
-    </div>
-  </section>
+      <section
+        id="contact"
+        class="fade-in"
+      >
+        <h2>Let's Connect</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="input-field"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              placeholder="Your Email"
+              class="input-field"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              placeholder="Write your message..."
+              class="input-field"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn-primary"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
 
-  <!--Experience-->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience-container">
-      <p class="p1">Personal Portfolio website<br>
-        HTML, CSS, JavaScript<br>
-        Jan 2025-present
-        <div>Designed and developed a personal portfolio to showcase projects and skills.</div>
-        <div>Implemented a responsive dark-themed layout with smooth animations using JavaScript.</div>
-      </p>
-      <p class="p2">
-        Responsive web design Projects<br>
-        HTML CSS JavaScript<br>
-        Oct 2024-Dec 2024
-        <div>Built multiple responsive web pages and mini projects as part of self learning.</div>
-      </p>
-    </div>
-  </section>
-
-  <!--Contact-->
-  <section id="contact">
-    <h2 style="color:black;">Let's connect</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required class="name"><br>
-      <input type="email" placeholder="Your Mail" required class="email"><br>
-      <textarea placeholder="Your Message" required class="message"></textarea><br>
-      <button type="submit" class="send">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-  </footer>
-</body>
+      <footer>
+        <p>&copy; 2026 Charitha. Built with code.</p>
+      </footer>
+    </main>
+  </body>
 </html>
