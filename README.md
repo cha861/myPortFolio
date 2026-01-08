@@ -1,40 +1,103 @@
-💼 Personal Portfolio Website
-This is my personal developer portfolio, built to showcase my skills, projects, and growth as a full stack web developer.  
-Currently focused on front-end development, and actively evolving this project as I learn more.
-## 🧰 Tech Stack
-- HTML5
-- CSS3 (Custom Styling)
-- JavaScript 
-- Responsive Design (Mobile-Friendly)
 
-## 📂 Sections Included
-- *Hero Section*: Introduction with name, role, and CTA buttons
-- *About*: Brief overview of my background, interests, and goals
-- *Projects*: List of selected works with descriptions
-- *Skills*: Visual display of tech tools I’m comfortable with
-- *Contact*: Contact form 
+## Personal Portfolio Website
 
-## 📌 Planned Improvements
-- Add smooth scroll and animations using JS or GSAP
-- Integrate backend contact form (via Netlify or Formspree)
-- Deploy and connect custom domain
-- Add dark mode toggle
-- Optimize for SEO and performance
-- rectify major bugs and issues in the code(working on it)
+I created this personal portfolio website to showcase my skills, projects, and learning journey as a Computer Science student and aspiring Full-Stack Developer.
 
-## 🚧 Current Status
-🟡 *In Progress* — last major update: 1 month ago  
+I am currently focused on front-end development, using this project as a practice space to enhance my HTML, CSS, and JavaScript skills. I plan to keep updating this repository as I learn new concepts and technologies.
 
-Actively learning and will push major updates soon!!
+---
 
-## 📫 Contact Me
-- [Email](mailto:charitha57807@gmail.com)
+### Tech Stack
 
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/charitha-c-4661b7329)
+* HTML5
+* CSS3 (custom styling)
+* JavaScript
+* Responsive Web Design
 
-- GitHub: [GitHub](https://github.com/cha861)
+---
+
+### Sections Included
+```
+* Profile / Hero Section – Brief introduction with my role and background
+* About – Overview of my academic journey and interests
+* Skills – Technologies I am currently working with
+* Experience & Projects – Selected works and learning projects
+* Contact – Simple contact form for communication
+```
+---
+
+### Current Status
+
+#### In Progress
+Last major update: 1 month ago
+
+This project is still under development. I regularly review the code, fix issues, and improve the structure as I continue learning web development.
+
+---
+
+### Planned Improvements
+
+* Add smooth scrolling and animations using JavaScript.
+* Integrate backend support for the contact form (Netlify / Formspree)
+* Deploy the site and connect a custom domain.
+* Add a dark mode toggle.
+* Improve SEO and performance.
+* Refactor code and fix existing bugs
+
+---
+### Learning Note
+
+I initially generated this project with the help of AI tools and chatbots. I actively review, modify, and improve the code.💼 Personal Portfolio Website
+
+I created this personal portfolio website to showcase my skills, projects, and learning journey as a Computer Science student and aspiring Full-Stack Developer.
+
+I am currently focused on front-end development, using this project as a practice space to enhance my HTML, CSS, and JavaScript skills. I plan to keep updating this repository as I learn new concepts and technologies.
+
+---
+
+### Tech Stack
+
+* HTML5
+* CSS3 (custom styling)
+* JavaScript
+* Responsive Web Design
+
+---
+
+### Sections Included
+
+* Profile / Hero Section – Brief introduction with my role and background
+* About – Overview of my academic journey and interests
+* Skills – Technologies I am currently working with
+* Experience & Projects – Selected works and learning projects
+* Contact – Simple contact form for communication
+
+---
+
+### Current Status
+
+#### In Progress
+Last major update: 1 month ago
+
+This project is still under development. I regularly review the code, fix issues, and improve the structure as I continue learning web development.
+
+---
+
+### Planned Improvements
+
+* Add smooth scrolling and animations using JavaScript.
+* Integrate backend support for the contact form (Netlify / Formspree)
+* Deploy the site and connect a custom domain.
+* Add a dark mode toggle.
+* Improve SEO and performance.
+* Refactor code and fix existing bugs
+
+---
+
+### Learning Note
+
+I initially generated this project with the help of AI tools and chatbots. I actively review, modify, and improve the code.
 
 
 
 
-> ⚠ This project is a part of my journey toward becoming a Full Stack Developer. Feedback and contributions are welcome!
